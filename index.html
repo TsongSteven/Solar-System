@@ -1,0 +1,263 @@
+<html>
+<head>
+<title>Planetary Modal</title>
+<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+<style>
+body {
+  background: #000000;
+  color: #ffffff;
+  
+}
+
+.track {
+  stroke: #ccc;
+}
+.svg-container{
+  display: flex;
+  justify-content: center;
+}
+svg{
+	max-height: 550px;
+	max-width: auto;
+}
+.sun {
+  motion-path: path('M 5 5 m -0, 0 a 0,0 0 1,0 0,0 a 0,0 0 1,0 -0,0');
+  offset-path: path('M 5 5 m -0, 0 a 0,0 0 1,0 0,0 a 0,0 0 1,0 -0,0');
+  animation: move 3s linear infinite;
+}
+.mercury {
+  motion-path: path('M 5 5 m -2, 0 a 2,2 0 1,0 4,0 a 2,2 0 1,0 -4,0');
+  offset-path: path('M 5 5 m -2, 0 a 2,2 0 1,0 4,0 a 2,2 0 1,0 -4,0');
+  animation: move 5.2408421398455894s linear infinite;
+}
+
+.venus {
+  motion-path: path('M 5 5 m -4, 0 a 4,4 0 1,0 8,0 a 4,4 0 1,0 -8,0');
+  offset-path: path('M 5 5 m -4, 0 a 4,4 0 1,0 8,0 a 4,4 0 1,0 -8,0');
+  animation: move 5.6151782292065926s linear infinite;
+  animation-direction: reverse;
+
+}
+
+.earth {
+  motion-path: path('M 5 5 m -6, 0 a 6,6 0 1,0 12,0 a 6,6 0 1,0 -12,0');
+  offset-path: path('M 5 5 m -6, 0 a 6,6 0 1,0 12,0 a 6,6 0 1,0 -12,0');
+  animation: move 5.1s linear infinite;
+}
+
+.mars {
+  motion-path: path('M 5 5 m -8, 0 a 8,8 0 1,0 16,0 a 8,8 0 1,0 -16,0');
+  offset-path: path('M 5 5 m -8, 0 a 8,8 0 1,0 16,0 a 8,8 0 1,0 -16,0');
+  animation: move 5.88s linear infinite;
+}
+.jupitar {
+  motion-path: path('M 5 5 m -10, 0 a 10,10 0 1,0 20,0 a 10,10 0 1,0 -20,0');
+  offset-path: path('M 5 5 m -10, 0 a 10,10 0 1,0 20,0 a 10,10 0 1,0 -20,0');
+  animation: move 15.86s linear infinite;
+}
+.saturn {
+  motion-path: path('M 5 5 m -12, 0 a 12,12 0 1,0 24,0 a 12,12 0 1,0 -24,0');
+  offset-path: path('M 5 5 m -12, 0 a 12,12 0 1,0 24,0 a 12,12 0 1,0 -24,0');
+  animation: move 32.46s linear infinite;
+}
+.uranus {
+  motion-path: path('M 5 5 m -14, 0 a 14,14 0 1,0 28,0 a 14,14 0 1,0 -28,0');
+  offset-path: path('M 5 5 m -14, 0 a 14,14 0 1,0 28,0 a 14,14 0 1,0 -28,0');
+  animation: move 89.01s linear infinite;
+  animation-direction: reverse;
+}
+.neptune {
+  motion-path: path('M 5 5 m -16, 0 a 16,16 0 1,0 32,0 a 16,16 0 1,0 -32,0');
+  offset-path: path('M 5 5 m -16, 0 a 16,16 0 1,0 32,0 a 16,16 0 1,0 -32,0');
+  animation: move 169.59s linear infinite;
+}
+
+.pluto {
+  motion-path: path('M 5 5 m -18, 0 a 18,18 0 1,0 36,0 a 18,18 0 1,0 -36,0');
+  offset-path: path('M 5 5 m -18, 0 a 18,18 0 1,0 36,0 a 18,18 0 1,0 -36,0');
+  animation: move 253.59s linear infinite;
+}
+
+
+@keyframes move {
+
+  100% { 
+    motion-offset: 100%;
+    offset-distance: 100%;
+	
+  }
+}
+</style>
+</head>
+<body>
+<div class="container">
+	<h1 class="font-weight-bold text-white">Welcome to the Virtual Solar System</h1>
+	<p class="font-weight-bold">This is the simple illustration of how our Solar Systems works.
+		In below illustration there are 9 planets revolving around the sun. There speeds are 
+		compared with Earth Revolutional Period and converted into seconds i.e., 365.26 days = 1s. 
+		In the following illustration when converted to
+		seconds the speed of mercury,venus was so fast that our eyes couldn't catch its speed.
+		In order to make little slower 5s has been added to each planets speeds.
+		
+	</p>
+</div>
+<br>
+<div class="mt-5 svg-container">
+<svg viewbox="-15,-15 40,40" height="100%" width="100%">
+  
+  <!-- the path to be animated along -->  
+     <path 
+    class="track"
+    fill="none"
+    stroke-width="0.2"
+    d="M 5 5 m -0, 0 a 0,0 0 1,0 0,0 a 0,0 0 1,0 -0,0"
+  />
+     <path 
+    class="track"
+    fill="none"
+    stroke-width="0.2"
+    d="M 5 5 m -2, 0 a 2,2 0 1,0 4,0 a 2,2 0 1,0 -4,0"
+  />
+  <path 
+    class="track"
+    fill="none"
+    stroke-width="0.2"
+    d="M 5 5 m -4, 0 a 4,4 0 1,0 8,0 a 4,4 0 1,0 -8,0"
+  />
+
+      <path 
+    class="track"
+    fill="none"
+    stroke-width="0.2"
+    d="M 5 5 m -6, 0 a 6,6 0 1,0 12,0 a 6,6 0 1,0 -12,0"
+  />
+
+      <path 
+    class="track"
+    fill="none"
+    stroke-width="0.2"
+    d="M 5 5 m -8, 0 a 8,8 0 1,0 16,0 a 8,8 0 1,0 -16,0"
+  />  
+  <path 
+    class="track"
+    fill="none"
+    stroke-width="0.2"
+    d="M 5 5 m -10, 0 a 10,10 0 1,0 20,0 a 10,10 0 1,0 -20,0"
+  /> 
+  <path 
+    class="track"
+    fill="none"
+    stroke-width="0.2"
+    d="M 5 5 m -12, 0 a 12,12 0 1,0 24,0 a 12,12 0 1,0 -24,0"
+  />
+  <path 
+    class="track"
+    fill="none"
+    stroke-width="0.2"
+    d="M 5 5 m -14, 0 a 14,14 0 1,0 28,0 a 14,14 0 1,0 -28,0"
+  />   
+    <path 
+    class="track"
+    fill="none"
+    stroke-width="0.2"
+    d="M 5 5 m -16, 0 a 16,16 0 1,0 32,0 a 16,16 0 1,0 -32,0"
+  />    
+    <path 
+    class="track"
+    fill="none"
+    stroke-width="0.2"
+    d="M 5 5 m -18, 0 a 18,18 0 1,0 36,0 a 18,18 0 1,0 -36,0"
+  />     
+  <!-- the mover -->
+   <circle class="sun" r="1" fill="yellow"></circle>
+   
+  <circle class="mercury" r="0.5" fill="#504e51"></circle>
+  <circle class="venus" r="0.6" fill="#d3a567"></circle>
+  <circle class="earth" r="0.6" fill="#6b93d6"></circle>
+  <circle class="mars" r="0.6" fill="#cc3333"></circle>
+  <circle class="jupitar" r="0.9" fill="#d8ca9d"></circle>
+  <circle class="saturn" r="0.8" fill="#fae5bf"></circle>
+  <circle class="uranus" r="0.6" fill="#93b8be"></circle>
+  <circle class="neptune" r="0.5" fill="#8ec3c3"></circle>
+  <circle class="pluto" r="0.4" fill="#ccceee"></circle>
+</svg>
+</div>
+<div class="container">
+<h2>Planet(s) Details</h2>
+<p>The below tables different planets Revolution time are calculated based on Earth Revolutional years.</p>
+<table class="table mt-3 text-white">
+    <thead>
+      <tr>
+        <th scope="col">Index</th>
+        <th scope="col">Planet Name</th>
+		<th scope="col">Revolution Days/Years(In Earth Rotate/Rev.)</th>
+		<th scope="col">Size(Radius)</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Mercury</td> 
+			<td>87.97 days</td> 
+			<td>2,440km</td> 			
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Venus</td> 
+			<td>224.7 days</td>
+			<td>6,052km</td>  			
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>Earth</td> 
+			<td>365.26 days</td> 
+			<td>6,371km</td> 			
+        </tr>
+        <tr>
+            <th scope="row">4</th>
+            <td>Mars</td> 
+			<td>1.88 yrs</td>
+			<td>3,390km</td>  			
+        </tr>
+        <tr>
+            <th scope="row">5</th>
+            <td>Jupitar</td> 
+			<td>11.86 yrs</td> 
+			<td>69,911km</td> 			
+        </tr>
+        <tr>
+            <th scope="row">6</th>
+            <td>Saturn</td> 
+			<td>29.46 yrs</td>
+			<td>58,232km</td> 			
+        </tr>
+        <tr>
+            <th scope="row">7</th>
+            <td>Uranus</td> 
+			<td>84.01 yrs</td>
+			<td>25,362km</td> 			
+        </tr>
+        <tr>
+            <th scope="row">8</th>
+            <td>Neptune</td> 
+			<td>164.59 yrs</td>
+			<td>24,622km</td> 			
+        </tr>
+        <tr>
+            <th scope="row">9</th>
+            <td>Pluto</td> 
+			<td>248.59 yrs</td>
+			<td>1,188.3km</td> 			
+        </tr>
+		
+    </tbody>
+  </table>
+</div>
+<div class="text-center text-white mt-5">
+	<p class="font-weight-bold">Developed By: <a target="_blank" href="www.pranansubba.com">Pranan Subba</a></p>
+</div>
+</body>
+</html>
